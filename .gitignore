@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+bin/
+lib/
+.Python
+bing_search_api.egg-info/
+dist/
+include/
