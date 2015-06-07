@@ -9,7 +9,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='bing_search_api',
-    version='0.1.dev1',
+    version='0.1.dev2',
     description='Bing Search API (Azure) wrapper',
     long_description=long_description,
     url='https://github.com/binilinlquad/bing-search-api.git',
