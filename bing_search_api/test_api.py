@@ -17,6 +17,10 @@ class TestBingSearchAPI(unittest.TestCase):
         assert result.status_code==200
         assert result.json is not None
 
+    def test_search_image_complex_params(self):
+        result = self.api.search_image('sunshine', payload={'$format': 'json', '$top': 5, 'Adult': '\'Strict\'', 'ImageFilters': '\'Size:Large+Aspect:Wide\''})
+        self.assertEqual(result.status_code, 200)
+
     def test_search_web(self):
         result = self.api.search_web('sunshine')
         assert result
