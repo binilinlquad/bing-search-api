@@ -4,29 +4,29 @@ from requests.auth import HTTPBasicAuth
 def quote(query):
     '''Quote query with sign(')'''
     if query.startswith('\'') is not True:
-        query = '\'' + query 
+        query = '\'' + query
 
     if query.endswith('\'') is not True:
-        query = query + '\''         
-    
+        query = query + '\''
+
     return query
 
 
 class BingSearchAPI:
-    ''' 
-    Microsoft Bing Search (Azure) Wrapper 
+    '''
+    Microsoft Bing Search (Azure) Wrapper
     '''
     def __init__(self, key):
         self.key = key
         self.user_agent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; FDM; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 1.1.4322)'
-        self.auth = HTTPBasicAuth(self.key, self.key) 
+        self.auth = HTTPBasicAuth(self.key, self.key)
         self.url = 'https://api.datamarket.azure.com/Bing/Search/'
-    
+
     def search(self, query, search_type, payload=None):
         '''Search implementation'''
         url = self.url + search_type
         headers = {'User-Agent': self.user_agent}
-        
+
         if payload is not None:
            payload['Query'] = quote(query)
         else:
@@ -67,6 +67,5 @@ class BingSearchAPI:
             payload = dict(Sources=quote(source))
         else:
             payload['Sources'] = quote(source)
-            
-        return self.search(query, 'Composite', payload)
 
+        return self.search(query, 'Composite', payload)
