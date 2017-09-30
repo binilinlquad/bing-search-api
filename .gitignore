@@ -6,3 +6,5 @@ lib/
 bing_search_api.egg-info/
 dist/
 include/
+pip-selfcheck.json
+pyvenv.cfg
