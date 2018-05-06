@@ -1,3 +1,9 @@
+THIS LIBRARY HAS STOPPED WORKING.
+****
+Please look for others libraries which supporting Microsot Cognitive Service
+
+Old README
+****
 Thin wrapper for Microsoft Bing Search (Azure). This module use Basic Auth.
 
 Usage
